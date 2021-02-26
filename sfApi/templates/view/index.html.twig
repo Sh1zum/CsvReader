@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formularz{% endblock %}
+{% block stylesheets %}
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+{% endblock %}
+ {% block javascripts %}
+     <script>let saveFilePath="{{ path('form') }}"</script>
+     <script src="view.js" type="text/javascript"></script>
+ {% endblock %}
+{% block body %}
+    <form method="post" class="file_save_form" >
+        <input type="file" name="fileCSV" accept=".csv"  required="required">
+        <input type="submit" name="parse" id="parse" class="mdc-button mdc-button--raised">
+    </form>
+    <div id="container" class="mdc-data-table__table-container">
+
+    </div>
+{% endblock %}
